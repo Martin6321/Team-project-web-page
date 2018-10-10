@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+
+<channel>
+  <title>Tím13 Projekt</title>
+  <link>http://147.175.98.152/project/index.php</link>
+  <description>Projekt z predmetu Webové technológie</description>
+  <language>sk</language>
+  <item>
+    <title>a</title>
+    <link>http://147.175.98.152/project/actualities.php</link>
+    <description>a</description>
+  </item>
+</channel>
+
+</rss>

@@ -1,0 +1,1 @@
+step = 0.33333333333333;x = 0:step:100;f = 2*tan(x/5);vys = [x;[diff(f)/step,0]];for i=1:300; x = vys(1,i); y = vys(2,i); S=sprintf('???,%f,%f',x,y); disp(S); end

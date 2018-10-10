@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Tim13 Project</title>
+  <link>http://147.175.98.152/project/index.php</link>
+  <description>Project of Web technologies</description>
+  <language>en-uk</language>
+  <item>
+    <title>Titulok článku</title>
+    <link>http://147.175.98.152/project/actualities.php</link>
+    <description>Eng text</description>
+  </item>
+</channel>
+
+</rss>

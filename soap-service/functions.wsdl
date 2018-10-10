@@ -1,0 +1,80 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='functions' 
+  targetNamespace='http://147.175.98.152/project/soap-service/functions.wdsl' 
+  xmlns:tns='http://147.175.98.152/project/soap-service/functions.wdsl' 
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' 
+  xmlns='http://schemas.xmlsoap.org/wsdl/'> 
+
+
+<message name='FuncRequest'> 
+  <part name='func' type='xsd:string'/> 
+  <part name='from' type='xsd:string'/> 
+  <part name='to'   type='xsd:string'/>   
+  <part name='apikey' type='xsd:string'/> 
+</message> 
+
+<message name='FuncResponse'> 
+  <part name='data' type='xsd:string'/> 
+</message>
+
+<message name='FuncDiffRequest'> 
+  <part name='func' type='xsd:string'/> 
+  <part name='from' type='xsd:string'/> 
+  <part name='to'   type='xsd:string'/>   
+  <part name='apikey' type='xsd:string'/> 
+</message>
+
+<message name='FuncDiffResponse'> 
+  <part name='data' type='xsd:string'/> 
+</message>
+
+
+
+
+<portType name='FunctionsPortType'>  
+  <operation name='evalFunc'>
+    <input message='tns:FuncRequest'/> 
+    <output message='tns:FuncResponse'/>   
+  </operation>  
+  <operation name='evalFuncDiff'>
+    <input message='tns:FuncDiffRequest'/> 
+    <output message='tns:FuncDiffResponse'/>   
+  </operation>
+</portType> 
+
+
+<binding name='FunctionsBinding' type='tns:FunctionsPortType'> 
+  <soap:binding style='rpc' 
+    transport='http://schemas.xmlsoap.org/soap/http'/>
+ 
+  <operation name='evalFunc'> 
+    <soap:operation soapAction='urn:localhost-functions#evalFunc'/> 
+    <input> 
+      <soap:body use='encoded' namespace='urn:localhost-functions' 
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+    </input> 
+    <output> 
+      <soap:body use='encoded' namespace='urn:localhost-functions' 
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+    </output> 
+  </operation> 
+  
+  <operation name='evalFuncDiff'> 
+    <soap:operation soapAction='urn:localhost-functions#evalFuncDiff'/> 
+    <input> 
+      <soap:body use='encoded' namespace='urn:localhost-functions' 
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+    </input> 
+    <output> 
+      <soap:body use='encoded' namespace='urn:localhost-functions' 
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/> 
+    </output> 
+  </operation>  
+</binding> 
+
+<service name='FunctionsService'> 
+  <port name='FunctionsPort' binding='FunctionsBinding'> 
+    <soap:address location='http://147.175.98.152/project/soap-service/server.php'/> 
+  </port> 
+</service>
+</definitions> 
